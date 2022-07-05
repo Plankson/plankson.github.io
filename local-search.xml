@@ -4,9 +4,36 @@
   
   
   <entry>
-    <title>离线强化学习论文（一）：2020-NIPS-morel-model-based-offline-reinforcement-learning-Paper</title>
-    <link href="/2022/07/04/OfflineRL_1/"/>
-    <url>/2022/07/04/OfflineRL_1/</url>
+    <title>离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration</title>
+    <link href="/2022/07/05/OfflineRL_1/"/>
+    <url>/2022/07/05/OfflineRL_1/</url>
+    
+    <content type="html"><![CDATA[<h2 id="创新点及贡献">创新点及贡献</h2><ul><li>系统说明了离线强化学习的普遍Extrapolation Error的产生原因。</li><li>提出了一种基于批约束的强化学习方法，在确定性MDP上能够消除这种ExtrapolationError。</li><li>同时为了将其推广到连续状态和动作空间，利用VAE提高生成动作的多样性来满足Batchcontrained条件进行训练。</li></ul><h2 id="研究痛点">研究痛点</h2><p>之前的offline RL学习具有高度的ExtrapolationError：训练数据集合和当前策略的真实（s,a）访问不一致造成的（在训练中Q值的更新选择了一个不熟悉的s'和a'）。而产生extrapolationerror的原因如下：</p><ol type="1"><li>数据缺失</li><li>模型的偏差：在一个batch <span class="math inline">\(B\)</span>中进行off-policyQ-learning的时候，采用的贝尔曼算子从<span class="math inline">\(B\)</span>中采样<span class="math inline">\((s,a,s&#39;,r)\)</span>进行估计 <span class="math inline">\(T^\pi Q(s,a)\approx\mathbb{E}_{s&#39;\sim B}\left[r+\gamma Q(s&#39;,\pi(s&#39;)) \right]\)</span>。当<span class="math inline">\(B\)</span>大小有限，数据的分布就很有可能产生偏差导致其是一个有偏估计而不是真实MDP中的转移。</li><li>就算batch <span class="math inline">\(B\)</span>的数据非常的完备，但是因为采样的策略和当前的策略有所不同，导致数据在batch中的权重占比也不一样，导致对当前策略值函数评估非常离谱。</li></ol><h2 id="算法思路">算法思路</h2><ul><li><p>首先构造了一个batch$ B<span class="math inline">\(下的MDP\)</span>MDP_B$，构造方法：</p><ul><li><span class="math inline">\(p_B(s&#39;|s,a)=\frac{N(s,a,s&#39;)}{\Sigma_{s_0}{N(s,a,s_0)}}\)</span>。</li><li>若<span class="math inline">\(\Sigma_{s_0}{N(s,a,s_0)}=0\)</span>，则<span class="math inline">\(p(s_{init}|s,a)=1,r(s,a,s_{init})=Q(s,a)\)</span></li></ul><p>论文说明batch <span class="math inline">\(B\)</span>中进行的采样做Q-learning会收敛到一个<span class="math inline">\(MDP_B\)</span>下的最优值函数。</p></li><li><p>接着定义extrapolation error <span class="math inline">\(\epsilon_{MDP}(s,a)=Q^\pi(s,a)-Q_{B}^{\pi}(s,a)\)</span>。</p><p>用Bellman方程展开： <span class="math display">\[\epsilon_{MDP}(s,a)=\sum_{s&#39;}(P_{M}(s&#39;|s,a)-P_B(s&#39;|s,a))(r(s,a,s&#39;)+\gamma\sum_{a&#39;}\pi(a&#39;|s&#39;)Q_B^\pi(s&#39;,a&#39;))+P_M(s&#39;|s,a)\gamma\sum_{a&#39;}\pi(a&#39;|s&#39;)\epsilon_{MDP}(s&#39;,a&#39;)\]</span>可以看到其是环境模型之间的散度（以一个值函数为权重）加上后继状态的error。</p><p>最后我们令： <span class="math display">\[\epsilon_{MDP}^\pi=\sum_{s}\mu_\pi(s)\sum_a\pi(a|s)|\epsilon_{MDP}(s,a)|\]</span> 很容易发现只有当 对任意<span class="math inline">\(\mu_\pi(s)\geq0,\pi(a|s)\geq0\)</span>的<span class="math inline">\((s,a,s&#39;)\)</span>满足<span class="math inline">\(p_B(s&#39;|s,a)=p_M(s&#39;|s,a)\)</span>时<span class="math inline">\(\epsilon_{MDP}^\pi=0\)</span>。也就是说在相关的地方都具有相同的转移概率的话就能够非常准确地逼近<span class="math inline">\(Q^\pi(s,a)\)</span>。</p></li><li><p>接下来定义batch-constrained 和 coherent概念：</p><ul><li>一个策略<span class="math inline">\(\pi\in\Pi_B\)</span>是batch-constrained的如果对于所有<span class="math inline">\(\mu_\pi(s)&gt;0,\pi(a|s)&gt;0\)</span>的(s,a)，他们都在<span class="math inline">\(B\)</span>中。</li><li>一个batch<span class="math inline">\(B\)</span>是coherent的如果所有<span class="math inline">\((s,a,s&#39;)\inB\)</span>都满足<span class="math inline">\(s&#39;\inB\)</span>（除非<span class="math inline">\(s&#39;\)</span>是一个terminal state）。</li></ul><p>进而可以有：<strong>对于一个确定性的MDP，<span class="math inline">\(\epsilon_{MDP}^\pi=0\)</span>当且仅当这个策略是batch-constrained的。并且若这个数据集B是coherent的且初始状态s0在这个数据集内的话就能保证一定能找到这样一个策略。</strong></p></li><li><p>这样我们就有了一个Barch-Constriained Q-Learning(BCQL)思路： <span class="math display">\[Q(s,a)=\alpha Q(s,a)+(1-\alpha)(r+\gamma\max_{a&#39;s.t.(s&#39;,a&#39;)\in B }Q(s&#39;,a&#39;))\]</span> 作者指出，BCQL学到的<span class="math inline">\(Q\)</span>函数值满足最优性，收敛于最优batch-constrained的policy。这个policy<span class="math inline">\(\pi^*\)</span>为：<span class="math inline">\(\pi^*(s)=\arg\max_{a s.t.(s,a)\inB}Q_B^\pi(s,a)\)</span>。</p></li><li><p>为了扩展到连续环境，作者提出了Barch-Constriained DeepQ-Learning(BCQ)。</p><ul><li><p>为了满足 Batch-constrained 的条件，BCQ利用了一个生成模型。对于给定的状态，BCQ 利用生成模型来生成与 batch相似的动作集合。</p><ul><li>给定状态s，将(s,a)和B中的状态动作对的相似度建模成条件概率 <span class="math inline">\(P_{\mathcal{B}}^{G}(a\mid s)\)</span>，选取具有最大的c动作进行更新。然而在高维空间中进行估计有点困难，于是这里用VAE的方法构造一个生成模型<span class="math inline">\(G_\omega(s)\)</span>，生成最可能动作<span class="math inline">\(a\)</span>的分布然后从中进行采样来逼近<span class="math inline">\(\arg\max_aP_{\mathcal{B}}^{G}(a\mids)\)</span>。</li></ul></li><li><p>提高生成动作的多样性，还在动作集合上添加扰动模型<span class="math inline">\(\xi_{\phi}(s, a, \Phi)\)</span>，扰动的范围是<span class="math inline">\([-\Phi,\Phi]\)</span>。</p><ul><li><p>policy可以表示为<span class="math inline">\(\pi(s)=\arg\max_{a_i+\xi_{\phi}(s, a_i,\Phi)}Q(s,a_i+\xi_{\phi}(s, a_i, \Phi)), \left[a_i\simG_\omega(s)\right]_{i=1}^n\)</span></p></li><li><p>扰动模型的训练方法和DDPG训练方法类似： <span class="math display">\[\phi=\arg\max_{\phi}\sum_{(s,a)\in B}Q(s,a_i+\xi_{\phi}(s, a, \Phi))\]</span></p></li></ul></li><li><p>为了对末来一些不常见的状态进行惩罚，采用 Clipped DoubleQ-learning 算法对动作值Q进行估计，同时进行改进： <span class="math display">\[y=r+\max_{a_i}\left[\lambda\min_{j=1,2}Q_{\theta_j}(s&#39;,a_i)+(1-\lambda)\max_{j=1,2}Q_{\theta_j}(s&#39;,a_i)\right]\]</span></p></li></ul></li><li><p>最后框架如下：</p><figure><img src="https://img-blog.csdnimg.cn/img_convert/cccd5c9d1169189e39018c605ab74a8b.png" alt="img"><figcaption aria-hidden="true">img</figcaption></figure></li></ul><h2 id="实验结果">实验结果</h2><h3 id="extrapolation-error">Extrapolation Error</h3><ul><li>Final buffer中记录了DDPG更新过程中的所有轨迹</li><li>Concurrent在Finalbuffer设置的基础上同时训练一个off-policy的智能体，并行训练100万步，都用behavioralDDPG agent采样得到的经验池中的数据进行训练。</li><li>Imitation:使用一个训练好的DDPG从环境中采集100万步数据，没有探索。</li></ul><p>从图中可以看出，off-policy的DDPG的结果很差。即便和behavioral DDPGagent同时训练（concurrent），也有很大的差距。这说明在稳定的状态分布下，<strong>初始策略的差异便可导致ExtrapolationError</strong>。而在imitation中，<strong>数据集中都是专家数据，在评估非专家的动作时，就会出现value的过估计问题</strong>。</p><p>on-line设置下，推断误差会导致过分估计，policy将会在未知的区域进行探索来修正误差。但是<strong>off-line是基于batch的，不能和环境进行交互，这样的误差将很难被消除。</strong></p><p><img src="https://img-blog.csdnimg.cn/img_convert/3ad57a171df7bdc0a5f646239ce77cc5.png"></p><h3 id="bcq-performance">BCQ performance</h3><p>如下图所示，BCQ的值估计准确而且稳定，这说明推测误差得到了很好的解决。BCQ可以从不好的数据示例中进行学习，并可以超过示例，此外，相较于一般的DRL算法，BCQ需要的迭代次数很少。</p><p><img src="https://img-blog.csdnimg.cn/img_convert/5b73de90b9e0b497aeeedcb80701417f.png"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/4b0f47676d1ec5f40ea3bda1ccdd575f.png"></p><p><img src="https://img-blog.csdnimg.cn/img_convert/146a054423fa2bb2c9eb62cbd03b8f18.png"></p><h2 id="参考文献">参考文献</h2><p>[1]. http://proceedings.mlr.press/v97/fujimoto19a/fujimoto19a.pdf</p><p>[2].https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>RL</category>
+      
+      <category>Offline-RL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Offline-RL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>离线强化学习论文（二）：2020-NIPS-morel-model-based-offline-reinforcement-learning-Paper</title>
+    <link href="/2022/07/04/OfflineRL_2/"/>
+    <url>/2022/07/04/OfflineRL_2/</url>
     
     <content type="html"><![CDATA[<h2 id="创新点及贡献">创新点及贡献</h2><ul><li>提出了基于模型的离线强化学习算法。</li><li>pessimistic-MDP的思想直接在重构的MDP上直接对转移进行了约束，并证明了当数据集足够大的时候，在新的MDP上训练得到的目标函数值和在原MDP上训练得到的目标函数值的差异会小于一个HittingTime项，而过去这个项是对未出现在数据集中的状态在最优策略中出现的概率的评估，而且过去常常假定这项为0。当前这项工作对该项进行了更细致的评估并缩小了目标最优策略和Offline-RL训练出来策略的目标函数值差异范围。</li></ul>]]></content>
     
