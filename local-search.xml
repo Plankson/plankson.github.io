@@ -35,7 +35,7 @@
     <link href="/2022/07/04/OfflineRL_2/"/>
     <url>/2022/07/04/OfflineRL_2/</url>
     
-    <content type="html"><![CDATA[<h2 id="创新点及贡献">创新点及贡献</h2><ul><li>提出了基于模型的离线强化学习算法。</li><li>pessimistic-MDP的思想直接在重构的MDP上直接对转移进行了约束，并证明了当数据集足够大的时候，在新的MDP上训练得到的目标函数值和在原MDP上训练得到的目标函数值的差异会小于一个HittingTime项，而过去这个项是对未出现在数据集中的状态在最优策略中出现的概率的评估，而且过去常常假定这项为0。当前这项工作对该项进行了更细致的评估并缩小了目标最优策略和Offline-RL训练出来策略的目标函数值差异范围。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="创新点及贡献">创新点及贡献</h2><ul><li>提出了基于模型的离线强化学习算法。</li><li>对原MDP进行显式的重构。pessimistic-MDP的思想直接在重构的MDP上直接对转移进行了约束，并证明了当数据集足够大的时候，在新的MDP上训练得到的目标函数值和在原MDP上训练得到的目标函数值的差异会小于一个HittingTime项，而过去这个项是对未出现在数据集中的状态在最优策略中出现的概率的评估，而且过去常常假定这项为0。当前这项工作对该项进行了更细致的评估并缩小了目标最优策略和Offline-RL训练出来策略的目标函数值差异范围。</li></ul><h2 id="研究痛点">研究痛点</h2><ul><li>过去的离线强化学习研究集中在model-free的方法上</li><li>同时在离线训练环境上对值函数高估</li></ul><h2 id="算法思路">算法思路</h2><p>算法整体框架如下:<img src="/2022/07/04/OfflineRL_2/1.png"></p><ul><li><p>估计环境模型可以采用最大似然估计MLE等方法</p></li><li><p><span class="math inline">\(\alpha-{\rmUSAD}\)</span>的构造方法如下：</p><p><img src="/2022/07/04/OfflineRL_2/2.png"></p></li><li><p>之后构造pessimistic-MDP模型，对于那些Unknown的状态动作对，直接让他halt，并给出一个负的reward。</p><p><img src="/2022/07/04/OfflineRL_2/3.png"></p></li><li><p>然后再在这个p-MDP模型上做行为克隆算法来估计采样时的策略<span class="math inline">\(\hat{\pi}_b\)</span>，最后用plan的方法得到一个<span class="math inline">\(\epsilon_\pi\)</span>次优的策略。</p></li><li><p>证明部分：</p><ul><li><p>首先目标函数可以被定义为<span class="math inline">\(J_{\rho_0}(\pi,M)=\mathbb{E}_{s\sim\rho_0}[V^\pi(s,M)]\)</span>。</p></li><li><p>定义<span class="math inline">\(T_{(s,a)}^\pi\)</span>为在s上第一次做a的时间点。而<span class="math inline">\(T_s^\pi=\min_{(s,a)\inS}T_{(s,a)}^\pi\)</span>。</p></li><li><p>定义<span class="math inline">\(\mathcal{U}=\{(s,a):U^\alpha(s,a)=true\}\)</span></p></li><li><p>首先在p-MDP上学到的目标函数满足下式，从而限制了p-MDP上目标函数的范围</p><p><img src="/2022/07/04/OfflineRL_2/11.png"></p></li><li><p>然后作者证明了在p-MDP上学到的策略误差上界：</p><p><img src="/2022/07/04/OfflineRL_2/4.png"></p><p><span class="math inline">\(D_{TV}(\rho_0,\hat{\rho_0})\)</span>是实际和学到的环境模型初始状态分布散度，<span class="math inline">\(\alpha\)</span>是这两个模型间的最大变异距离（见<span class="math inline">\(\alpha-{\rm USAD}\)</span>）。当数据集<span class="math inline">\(D\)</span>足够大时，这两个变量都趋向为0，那么进一步可以引出如下公式：</p><p><img src="/2022/07/04/OfflineRL_2/5.png"></p><p>其实当<span class="math inline">\(D\)</span>足够大时，这部分<span class="math inline">\(\mathbb{E}[\gamma^{T_{\mathcalU}^{\pi^*}}]\)</span>也会趋向于0。</p></li></ul></li><li><p>实际操作：对<span class="math inline">\(\alpha-{\rmUSAD}\)</span>采用不确定度量化的方法（思索一下还是很有道理的）</p><p><img src="/2022/07/04/OfflineRL_2/6.png"></p></li></ul><h2 id="实验结果">实验结果</h2><h3 id="和其他baseline对比">和其他Baseline对比</h3><p>显著优于其他Baseline.</p><p><img src="/2022/07/04/OfflineRL_2/7.png"></p><h3 id="和朴素的model-based对比">和朴素的Model-Based对比 ：</h3><p>Naive MBRL会非常地不稳定，而MoReL相对来说非常稳定和近单调的学习。</p><p><img src="/2022/07/04/OfflineRL_2/8.png"></p><h3 id="数据集对应的策略质量影响">数据集对应的策略质量影响</h3><p>上述证明过程中说明了MoReL的方法是高度依赖于构造数据集时所对应的策略的，在下面的测试中可以看到对于随机策略生成的数据训练的效果要远低于部分训练后策略生成的数据训练效果。</p><p><img src="/2022/07/04/OfflineRL_2/9.png"></p><h3 id="p-mdp和实际环境中return-value的对比">P-MDP和实际环境中returnvalue的对比</h3><p>在证明部分提到的Theorem1第二个式子潜在说明了p-MDP下的值是一个近似的下界。</p><p>可以看到在真实环境中的值与P-MDP中的值密切相关。特别是，<strong>P-MDP值从未显著超过真实的性能</strong>，这表明悲观的方法主义有助于避免模型过分估计。</p><p><img src="/2022/07/04/OfflineRL_2/10.png"></p><h2 id="参考文献">参考文献</h2>]]></content>
     
     
     <categories>
@@ -79,19 +79,6 @@
       <tag>Free talk</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2022/06/23/hello-world/"/>
-    <url>/2022/06/23/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your veryfirst post. Check <a href="https://hexo.io/docs/">documentation</a> formore info. If you get any problems when using Hexo, you can find theanswer in <ahref="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> oryou can ask me on <ahref="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start">Quick Start</h2><h3 id="create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <ahref="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
     
   </entry>
   
