@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer</title>
+    <link href="/2022/07/11/Multi-Agent%20RL_1/"/>
+    <url>/2022/07/11/Multi-Agent%20RL_1/</url>
+    
+    <content type="html"><![CDATA[<h2 id="创新点及贡献">创新点及贡献</h2><ul><li>提出了划分子任务的多智能体强化学习算法。</li><li>利用Q值来检测episode中的分割点和进行表征学习。</li></ul><h2 id="研究痛点">研究痛点</h2><ul><li>目前的多智能体强化学习算法对稀疏的奖励空间效果一般</li></ul><h2 id="算法思路">算法思路</h2><p>MASER算法以块为单位进行操作。</p><p>块的结构如下所示：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/1.png"></p><p><span class="math inline">\(N\)</span>个Agent分别对应<span class="math inline">\(N\)</span>个 local的<span class="math inline">\(Q\)</span>网络（参数为<span class="math inline">\(\theta_i\)</span>）。然后一个mixing 网络<span class="math inline">\(\theta\)</span>接收这些local 的Q值计算<span class="math inline">\(Q_{tot}\)</span>。</p><h3 id="生成子目标">1. 生成子目标</h3><p>当处于块<span class="math inline">\(b\)</span>时，对于每个episode来说，每个Agent的subgoal是能够产生最大价值的那个state（或者observation）。因此，为了同时利用局部<span class="math inline">\(Q^i\)</span>和全局<span class="math inline">\(Q^{tot}\)</span>，提出了如下方法来寻找子目标出现的时间<span class="math inline">\(t_*^{i}\)</span>和对应的状态<span class="math inline">\(o_g^i\)</span>：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/2.png"></p><h3 id="整体奖励设计">2. 整体奖励设计</h3><p>定义每个Agent的内在reward如下：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/3.png"></p><p><span class="math inline">\(\phi^i(·)\)</span>是一个actionable representational tranforms，也就是说用当前observation和子目标observation 变换后向量的欧氏距离的负值作为reward。</p><p>如果把这个内在奖励加入到这一时刻<span class="math inline">\(t\)</span>整体的外在奖励中，就解决了外部奖励稀疏的问题，有：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/4.png"></p><p>因此我们用这个<span class="math inline">\(R_t\)</span>来更新整体<span class="math inline">\(Q^{tot}\)</span>的网络参数。</p><p>而用于更新每个Agent的局部Q网络的<span class="math inline">\(r_t\)</span>同时考虑了对于整体Reward的贡献，同时再次明确强调了<span class="math inline">\(r_t^{t-init}\)</span>用于到达子目标：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/5.png"></p><h3 id="基于q函数的表示学习">3. 基于Q函数的表示学习</h3><p>用基于Q函数（已经Normalize）的余弦相似度来度量两个Observation间的距离（<em>actionable distance</em>）：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/6.png"></p><p>然后根据这个actionable distance来定义<span class="math inline">\(\phi_i\)</span>的损失函数：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/7.png"></p><h3 id="整体学习框架">4. 整体学习框架</h3><p><strong>局部Q：</strong><img src="/2022/07/11/Multi-Agent%20RL_1/8.png"></p><p><strong>全局Q：</strong><img src="/2022/07/11/Multi-Agent%20RL_1/9.png"></p><p><strong>Episodic Correction：</strong>可以看到对于subgoal后面的序列来说，这种reward <span class="math inline">\(r_t^i\)</span>是错误的（因为并不需要往subgoal上靠）。因此在后半段直接用最大熵法进行修正（<span class="math inline">\(\pi_U\)</span>对应均匀分布，因此这个式子就是普通的最大熵= =）：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/10.png"></p><p>所以最后总的Loss包括了<span class="math inline">\(Q^{tot}\)</span>，每个Agent的{ <span class="math inline">\(Q^{i}\)</span>，<span class="math inline">\(\phi_i\)</span>表示的损失，从subgoal时间点往后每个observation对应的最大熵项<span class="math inline">\(L_{E,t}(\theta_i)\)</span> }。</p><p>每当一个block学习完都跳到下一个block，然后用<span class="math inline">\(\epsilon-\)</span>greedy的方法利用<span class="math inline">\(Q\)</span>函数进行采样放到Buffer中，开始下一个block的训练。</p><h2 id="实验结果">实验结果</h2><p>在稀疏reward环境上表现良好：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/11.png"></p><p>同时Correction对于提升性能来说也是必要的并且十分优秀的：</p><p><img src="/2022/07/11/Multi-Agent%20RL_1/12.png"></p><h3 id="参考文献">参考文献</h3><p>[1] : https://proceedings.mlr.press/v162/jeon22a.html</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>RL</category>
+      
+      <category>MultiAgent-RL</category>
+      
+      <category>Subtask-Deviding</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MultiAgent-RL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration</title>
     <link href="/2022/07/05/OfflineRL_1/"/>
     <url>/2022/07/05/OfflineRL_1/</url>

@@ -16,18 +16,18 @@
   <meta name="author" content="Plankson">
   <meta name="keywords" content="paper notes">
   
-    <meta name="description" content="创新点及贡献  系统说明了离线强化学习的普遍Extrapolation Error的产生原因。 提出了一种基于批约束的强化学习方法，在确定性MDP上能够消除这种Extrapolation Error。 同时为了将其推广到连续状态和动作空间，利用VAE提高生成动作的多样性来满足Batch contrained条件进行训练。  研究痛点 之前的offline RL学习具有高度的Ext">
+    <meta name="description" content="创新点及贡献  提出了划分子任务的多智能体强化学习算法。 利用Q值来检测episode中的分割点和进行表征学习。  研究痛点  目前的多智能体强化学习算法对稀疏的奖励空间效果一般  算法思路 MASER算法以块为单位进行操作。 块的结构如下所示：  \(N\)个Agent分别对应\(N\)个 local的\(Q\)网络（参数为\(\theta_i\)）。然后一个mixin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration">
-<meta property="og:url" content="http://example.com/2022/07/05/OfflineRL_1/index.html">
+<meta property="og:title" content="多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer">
+<meta property="og:url" content="http://example.com/2022/07/11/Multi-Agent%20RL_1/index.html">
 <meta property="og:site_name" content="Plankson&#39;s Home">
-<meta property="og:description" content="创新点及贡献  系统说明了离线强化学习的普遍Extrapolation Error的产生原因。 提出了一种基于批约束的强化学习方法，在确定性MDP上能够消除这种Extrapolation Error。 同时为了将其推广到连续状态和动作空间，利用VAE提高生成动作的多样性来满足Batch contrained条件进行训练。  研究痛点 之前的offline RL学习具有高度的Ext">
+<meta property="og:description" content="创新点及贡献  提出了划分子任务的多智能体强化学习算法。 利用Q值来检测episode中的分割点和进行表征学习。  研究痛点  目前的多智能体强化学习算法对稀疏的奖励空间效果一般  算法思路 MASER算法以块为单位进行操作。 块的结构如下所示：  \(N\)个Agent分别对应\(N\)个 local的\(Q\)网络（参数为\(\theta_i\)）。然后一个mixin">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/default.png">
-<meta property="article:published_time" content="2022-07-05T07:33:20.000Z">
-<meta property="article:modified_time" content="2022-07-05T11:40:25.706Z">
+<meta property="article:published_time" content="2022-07-11T10:47:20.000Z">
+<meta property="article:modified_time" content="2022-07-11T12:01:17.669Z">
 <meta property="article:author" content="Plankson">
-<meta property="article:tag" content="Offline-RL">
+<meta property="article:tag" content="MultiAgent-RL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/default.png">
   
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration - Plankson&#39;s Home</title>
+  <title>多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer - Plankson&#39;s Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -227,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration"></span>
+            <span id="subtitle" data-typed-text="多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer"></span>
           
         </div>
 
@@ -243,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-05 15:33" pubdate>
-          2022年7月5日 下午
+        <time datetime="2022-07-11 18:47" pubdate>
+          2022年7月11日 晚上
         </time>
       </span>
     
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.6k 字
+          1.2k 字
         
       </span>
     
@@ -266,7 +266,7 @@
         
         
         
-          30 分钟
+          11 分钟
         
       </span>
     
@@ -312,12 +312,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration</h1>
+            <h1 style="display: none">多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月5日 晚上
+                    本文最后更新于：2022年7月11日 晚上
                   
                 
               </p>
@@ -327,111 +327,49 @@
                 
                 <h2 id="创新点及贡献">创新点及贡献</h2>
 <ul>
-<li>系统说明了离线强化学习的普遍Extrapolation Error的产生原因。</li>
-<li>提出了一种基于批约束的强化学习方法，在确定性MDP上能够消除这种Extrapolation
-Error。</li>
-<li>同时为了将其推广到连续状态和动作空间，利用VAE提高生成动作的多样性来满足Batch
-contrained条件进行训练。</li>
+<li>提出了划分子任务的多智能体强化学习算法。</li>
+<li>利用Q值来检测episode中的分割点和进行表征学习。</li>
 </ul>
 <h2 id="研究痛点">研究痛点</h2>
-<p>之前的offline RL学习具有高度的Extrapolation
-Error：训练数据集合和当前策略的真实（s,a）访问不一致造成的（在训练中Q值的更新选择了一个不熟悉的s'和a'）。而产生extrapolation
-error的原因如下：</p>
-<ol type="1">
-<li>数据缺失</li>
-<li>模型的偏差：在一个batch <span class="math inline">\(B\)</span>中进行off-policy
-Q-learning的时候，采用的贝尔曼算子从<span class="math inline">\(B\)</span>中采样<span class="math inline">\((s,a,s&#39;,r)\)</span>进行估计 <span class="math inline">\(T^\pi Q(s,a)\approx\mathbb{E}_{s&#39;\sim B}\left[
-r+\gamma Q(s&#39;,\pi(s&#39;)) \right]\)</span>。当<span class="math inline">\(B\)</span>大小有限，数据的分布就很有可能产生偏差导致其是一个有偏估计而不是真实MDP中的转移。</li>
-<li>就算batch <span class="math inline">\(B\)</span>的数据非常的完备，但是因为采样的策略和当前的策略有所不同，导致数据在batch中的权重占比也不一样，导致对当前策略值函数评估非常离谱。</li>
-</ol>
+<ul>
+<li>目前的多智能体强化学习算法对稀疏的奖励空间效果一般</li>
+</ul>
 <h2 id="算法思路">算法思路</h2>
-<ul>
-<li><p>首先构造了一个batch$ B<span class="math inline">\(下的MDP\)</span>MDP_B$，构造方法：</p>
-<ul>
-<li><span class="math inline">\(p_B(s&#39;|s,a)=\frac{N(s,a,s&#39;)}{\Sigma_{s_0}{N(s,a,s_0)}}\)</span>。</li>
-<li>若<span class="math inline">\(\Sigma_{s_0}{N(s,a,s_0)}=0\)</span>，则<span class="math inline">\(p(s_{init}|s,a)=1,
-r(s,a,s_{init})=Q(s,a)\)</span></li>
-</ul>
-<p>论文说明batch <span class="math inline">\(B\)</span>中进行的采样做Q-learning会收敛到一个<span class="math inline">\(MDP_B\)</span>下的最优值函数。</p></li>
-<li><p>接着定义extrapolation error <span class="math inline">\(\epsilon_{MDP}(s,a)=Q^\pi(s,a)-Q_{B}^{\pi}(s,a)\)</span>。</p>
-<p>用Bellman方程展开： <span class="math display">\[
-\epsilon_{MDP}(s,a)=\sum_{s&#39;}(P_{M}(s&#39;|s,a)-P_B(s&#39;|s,a))(r(s,a,s&#39;)+\gamma\sum_{a&#39;}\pi(a&#39;|s&#39;)Q_B^\pi(s&#39;,a&#39;))+P_M(s&#39;|s,a)\gamma\sum_{a&#39;}\pi(a&#39;|s&#39;)\epsilon_{MDP}(s&#39;,a&#39;)
-\]</span>
-可以看到其是环境模型之间的散度（以一个值函数为权重）加上后继状态的error。</p>
-<p>最后我们令： <span class="math display">\[
-\epsilon_{MDP}^\pi=\sum_{s}\mu_\pi(s)\sum_a\pi(a|s)|\epsilon_{MDP}(s,a)|
-\]</span> 很容易发现只有当 对任意<span class="math inline">\(\mu_\pi(s)\geq0,\pi(a|s)\geq0\)</span>的<span class="math inline">\((s,a,s&#39;)\)</span>满足<span class="math inline">\(p_B(s&#39;|s,a)=p_M(s&#39;|s,a)\)</span>时<span class="math inline">\(\epsilon_{MDP}^\pi=0\)</span>。也就是说在相关的地方都具有相同的转移概率的话就能够非常准确地逼近<span class="math inline">\(Q^\pi(s,a)\)</span>。</p></li>
-<li><p>接下来定义batch-constrained 和 coherent概念：</p>
-<ul>
-<li>一个策略<span class="math inline">\(\pi\in\Pi_B\)</span>是batch-constrained的
-如果对于所有<span class="math inline">\(\mu_\pi(s)&gt;0,\pi(a|s)&gt;0\)</span>的(s,a)，他们都在<span class="math inline">\(B\)</span>中。</li>
-<li>一个batch<span class="math inline">\(B\)</span>是coherent的
-如果所有<span class="math inline">\((s,a,s&#39;)\in
-B\)</span>都满足<span class="math inline">\(s&#39;\in
-B\)</span>（除非<span class="math inline">\(s&#39;\)</span>是一个terminal state）。</li>
-</ul>
-<p>进而可以有：<strong>对于一个确定性的MDP，<span class="math inline">\(\epsilon_{MDP}^\pi=0\)</span>当且仅当这个策略是batch-constrained的。并且若这个数据集B是coherent的且初始状态s0在这个数据集内的话就能保证一定能找到这样一个策略。</strong></p></li>
-<li><p>这样我们就有了一个Barch-Constriained Q-Learning(BCQL)思路： <span class="math display">\[
-Q(s,a)=\alpha Q(s,a)+(1-\alpha)(r+\gamma\max_{a&#39;
-s.t.(s&#39;,a&#39;)\in B }Q(s&#39;,a&#39;))
-\]</span> 作者指出，BCQL学到的<span class="math inline">\(Q\)</span>函数值满足最优性，收敛于最优batch-constrained的policy。这个policy
-<span class="math inline">\(\pi^*\)</span>为：<span class="math inline">\(\pi^*(s)=\arg\max_{a s.t.(s,a)\in
-B}Q_B^\pi(s,a)\)</span>。</p></li>
-<li><p>为了扩展到连续环境，作者提出了Barch-Constriained Deep
-Q-Learning(BCQ)。</p>
-<ul>
-<li><p>为了满足 Batch-constrained 的条件，BCQ
-利用了一个生成模型。对于给定的状态，BCQ 利用生成模型来生成与 batch
-相似的动作集合。</p>
-<ul>
-<li>给定状态s，将(s,a)和B中的状态动作对的相似度建模成条件概率 <span class="math inline">\(P_{\mathcal{B}}^{G}(a\mid s)\)</span>
-，选取具有最大的c动作进行更新。然而在高维空间中进行估计有点困难，于是这里用VAE的方法构造一个生成模型<span class="math inline">\(G_\omega(s)\)</span>，生成最可能动作<span class="math inline">\(a\)</span>的分布然后从中进行采样来逼近<span class="math inline">\(\arg\max_aP_{\mathcal{B}}^{G}(a\mid
-s)\)</span>。</li>
-</ul></li>
-<li><p>提高生成动作的多样性，还在动作集合上添加扰动模型<span class="math inline">\(\xi_{\phi}(s, a, \Phi)\)</span>，扰动的范围是<span class="math inline">\([-\Phi,\Phi]\)</span>。</p>
-<ul>
-<li><p>policy可以表示为<span class="math inline">\(\pi(s)=\arg\max_{a_i+\xi_{\phi}(s, a_i,
-\Phi)}Q(s,a_i+\xi_{\phi}(s, a_i, \Phi)), \left[a_i\sim
-G_\omega(s)\right]_{i=1}^n\)</span></p></li>
-<li><p>扰动模型的训练方法和DDPG训练方法类似： <span class="math display">\[
-\phi=\arg\max_{\phi}\sum_{(s,a)\in B}Q(s,a_i+\xi_{\phi}(s, a, \Phi))
-\]</span></p></li>
-</ul></li>
-<li><p>为了对末来一些不常见的状态进行惩罚，采用 Clipped Double
-Q-learning 算法对动作值Q进行估计，同时进行改进： <span class="math display">\[
-y=r+\max_{a_i}\left[\lambda\min_{j=1,2}Q_{\theta_j}(s&#39;,a_i)+(1-\lambda)\max_{j=1,2}Q_{\theta_j}(s&#39;,a_i)\right]
-\]</span></p></li>
-</ul></li>
-<li><p>最后框架如下：</p>
-<figure>
-<img src="https://img-blog.csdnimg.cn/img_convert/cccd5c9d1169189e39018c605ab74a8b.png" srcset="/img/loading.gif" lazyload alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-</ul>
+<p>MASER算法以块为单位进行操作。</p>
+<p>块的结构如下所示：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/1.png" srcset="/img/loading.gif" lazyload></p>
+<p><span class="math inline">\(N\)</span>个Agent分别对应<span class="math inline">\(N\)</span>个 local的<span class="math inline">\(Q\)</span>网络（参数为<span class="math inline">\(\theta_i\)</span>）。然后一个mixing 网络<span class="math inline">\(\theta\)</span>接收这些local 的Q值计算<span class="math inline">\(Q_{tot}\)</span>。</p>
+<h3 id="生成子目标">1. 生成子目标</h3>
+<p>当处于块<span class="math inline">\(b\)</span>时，对于每个episode来说，每个Agent的subgoal是能够产生最大价值的那个state（或者observation）。因此，为了同时利用局部<span class="math inline">\(Q^i\)</span>和全局<span class="math inline">\(Q^{tot}\)</span>，提出了如下方法来寻找子目标出现的时间<span class="math inline">\(t_*^{i}\)</span>和对应的状态<span class="math inline">\(o_g^i\)</span>：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/2.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="整体奖励设计">2. 整体奖励设计</h3>
+<p>定义每个Agent的内在reward如下：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/3.png" srcset="/img/loading.gif" lazyload></p>
+<p><span class="math inline">\(\phi^i(·)\)</span>是一个actionable representational tranforms，也就是说用当前observation和子目标observation 变换后向量的欧氏距离的负值作为reward。</p>
+<p>如果把这个内在奖励加入到这一时刻<span class="math inline">\(t\)</span>整体的外在奖励中，就解决了外部奖励稀疏的问题，有：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/4.png" srcset="/img/loading.gif" lazyload></p>
+<p>因此我们用这个<span class="math inline">\(R_t\)</span>来更新整体<span class="math inline">\(Q^{tot}\)</span>的网络参数。</p>
+<p>而用于更新每个Agent的局部Q网络的<span class="math inline">\(r_t\)</span>同时考虑了对于整体Reward的贡献，同时再次明确强调了<span class="math inline">\(r_t^{t-init}\)</span>用于到达子目标：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="基于q函数的表示学习">3. 基于Q函数的表示学习</h3>
+<p>用基于Q函数（已经Normalize）的余弦相似度来度量两个Observation间的距离（<em>actionable distance</em>）：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/6.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后根据这个actionable distance来定义<span class="math inline">\(\phi_i\)</span>的损失函数：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/7.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="整体学习框架">4. 整体学习框架</h3>
+<p><strong>局部Q：</strong><img src="/2022/07/11/Multi-Agent%20RL_1/8.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>全局Q：</strong><img src="/2022/07/11/Multi-Agent%20RL_1/9.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>Episodic Correction：</strong>可以看到对于subgoal后面的序列来说，这种reward <span class="math inline">\(r_t^i\)</span>是错误的（因为并不需要往subgoal上靠）。因此在后半段直接用最大熵法进行修正（<span class="math inline">\(\pi_U\)</span>对应均匀分布，因此这个式子就是普通的最大熵= =）：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/10.png" srcset="/img/loading.gif" lazyload></p>
+<p>所以最后总的Loss包括了<span class="math inline">\(Q^{tot}\)</span>，每个Agent的{ <span class="math inline">\(Q^{i}\)</span>，<span class="math inline">\(\phi_i\)</span>表示的损失，从subgoal时间点往后每个observation对应的最大熵项<span class="math inline">\(L_{E,t}(\theta_i)\)</span> }。</p>
+<p>每当一个block学习完都跳到下一个block，然后用<span class="math inline">\(\epsilon-\)</span>greedy的方法利用<span class="math inline">\(Q\)</span>函数进行采样放到Buffer中，开始下一个block的训练。</p>
 <h2 id="实验结果">实验结果</h2>
-<h3 id="extrapolation-error">Extrapolation Error</h3>
-<ul>
-<li>Final buffer中记录了DDPG更新过程中的所有轨迹</li>
-<li>Concurrent在Final
-buffer设置的基础上同时训练一个off-policy的智能体，并行训练100万步，都用behavioral
-DDPG agent采样得到的经验池中的数据进行训练。</li>
-<li>Imitation:
-使用一个训练好的DDPG从环境中采集100万步数据，没有探索。</li>
-</ul>
-<p>从图中可以看出，off-policy的DDPG的结果很差。即便和behavioral DDPG
-agent同时训练（concurrent），也有很大的差距。这说明在稳定的状态分布下，<strong>初始策略的差异便可导致Extrapolation
-Error</strong>。而在imitation中，<strong>数据集中都是专家数据，在评估非专家的动作时，就会出现value的过估计问题</strong>。</p>
-<p>on-line设置下，推断误差会导致过分估计，policy将会在未知的区域进行探索来修正误差。但是<strong>off-line是基于batch的，不能和环境进行交互，这样的误差将很难被消除。</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/3ad57a171df7bdc0a5f646239ce77cc5.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="bcq-performance">BCQ performance</h3>
-<p>如下图所示，BCQ的值估计准确而且稳定，这说明推测误差得到了很好的解决。BCQ可以从不好的数据示例中进行学习，并可以超过示例，此外，相较于一般的DRL算法，BCQ需要的迭代次数很少。</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/5b73de90b9e0b497aeeedcb80701417f.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/4b0f47676d1ec5f40ea3bda1ccdd575f.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/146a054423fa2bb2c9eb62cbd03b8f18.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="参考文献">参考文献</h2>
-<p>[1]. http://proceedings.mlr.press/v97/fujimoto19a/fujimoto19a.pdf</p>
-<p>[2].
-https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502</p>
+<p>在稀疏reward环境上表现良好：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/11.png" srcset="/img/loading.gif" lazyload></p>
+<p>同时Correction对于提升性能来说也是必要的并且十分优秀的：</p>
+<p><img src="/2022/07/11/Multi-Agent%20RL_1/12.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="参考文献">参考文献</h3>
+<p>[1] : https://proceedings.mlr.press/v162/jeon22a.html</p>
 
                 
               </div>
@@ -455,8 +393,15 @@ https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502<
   
     <span>></span>
     
-  <a href="/categories/RL/Offline-RL/" class="category-chain-item">Offline-RL</a>
+  <a href="/categories/RL/MultiAgent-RL/" class="category-chain-item">MultiAgent-RL</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/RL/MultiAgent-RL/Subtask-Deviding/" class="category-chain-item">Subtask-Deviding</a>
+  
+  
+
   
 
   
@@ -472,7 +417,7 @@ https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502<
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Offline-RL/">#Offline-RL</a>
+        <a href="/tags/MultiAgent-RL/">#MultiAgent-RL</a>
       
     </div>
   
@@ -484,8 +429,8 @@ https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502<
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration</div>
-      <div>http://example.com/2022/07/05/OfflineRL_1/</div>
+      <div>多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer</div>
+      <div>http://example.com/2022/07/11/Multi-Agent RL_1/</div>
     </div>
     <div class="license-meta">
       
@@ -497,7 +442,7 @@ https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502<
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月5日</div>
+          <div>2022年7月11日</div>
         </div>
       
       
@@ -527,18 +472,12 @@ https://blog.csdn.net/gsww404/article/details/123926753?spm=1001.2014.3001.5502<
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/11/Multi-Agent%20RL_1/" title="多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">多智能体强化学习论文（一）MASER Multi-Agent Reinforcement Learning with Subgoals Generated from Experience Replay Buffer</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/04/OfflineRL_2/" title="离线强化学习论文（二）：2020-NIPS-morel-model-based-offline-reinforcement-learning-Paper">
-                        <span class="hidden-mobile">离线强化学习论文（二）：2020-NIPS-morel-model-based-offline-reinforcement-learning-Paper</span>
+                      <a href="/2022/07/05/OfflineRL_1/" title="离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration">
+                        <span class="hidden-mobile">离线强化学习论文（一）：2019-ICML-Off-Policy-Deep-Reinforcement-Learning-without-Exploration</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
