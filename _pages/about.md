@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: The College of Computer Science and Technology, Zhejiang University
 
 profile:
   align: right
@@ -21,4 +21,6 @@ Hello! I am Yunpeng Qing, a first-year M.Sc. student in the [Visual Intelligence
 
 Currently my reseach interests lies on **Reinforcement Learning**, especially on **Offline Reinforcement Learning**. My overarching goal is to create a robust and reliable general framework for agent to effectively recognize and sequential sequantial decision-making informations data. To this end, my prior work has been dedicated to devising methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.  
 
-Please always feel free to contact me via [**yunpeng.qing.cs@gmail.com**](yunpeng.qing.cs@gmail.com) if you have any questions, are interested in collaborating, or just want to chat.
+Please always feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpeng.qing.cs@gmail.com) if you have any questions, are interested in collaborating, or just want to chat.
+
+<i class="fas fa-book"></i> [**Semantic Scholar**](https://www.semanticscholar.org/author/Yunpeng-Qing/2190750836) &nbsp;&nbsp; <i class="ai ai-google-scholar"></i> [**Google Scholar**](https://scholar.google.com/citations?user=-RvDl44AAAAJ&hl=zh-CN) &nbsp;&nbsp; <i class="fa fa-envelope"></i> [**Email**](mailto:yunpeng.qing.cs@gmail.com) &nbsp;&nbsp; <i class="fa fa-github"></i> [**GitHub**](https://github.com/Raiden-Zhu) &nbsp;&nbsp; 
