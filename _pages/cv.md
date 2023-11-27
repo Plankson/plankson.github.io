@@ -9,3 +9,5 @@ description: This is a description of the page. You can modify it in 'pages/_cv.
 toc:
   sidebar: left
 ---
+
+{% pdf "/assets/pdf/CV.pdf" %}
