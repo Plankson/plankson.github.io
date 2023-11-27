@@ -213,6 +213,7 @@ keep_files:
 
 # Plug-ins
 plugins:
+  - jekyll-pdf-embed
   - jekyll-archives
   - jekyll-diagrams
   - jekyll-email-protect
