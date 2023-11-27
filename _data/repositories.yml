@@ -1,12 +1,6 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Plankson
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - Plankson/CSIRL
+  - Plankson/awesome-explainable-reinforcement-learning
