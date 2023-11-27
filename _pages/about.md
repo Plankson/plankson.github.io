@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: The College of Computer Science and Technology, Zhejiang University
 

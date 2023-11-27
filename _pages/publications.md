@@ -2,7 +2,7 @@
 layout: page
 permalink: /Publications/
 title: Publications
-description: $$\dagger$$ Equal contribution.
+description: 
 nav: true
 nav_order: 1
 ---
