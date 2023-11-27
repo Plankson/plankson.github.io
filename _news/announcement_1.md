@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I receive the Third-class Scholarship!
+I receive the **Third-class Scholarship**!

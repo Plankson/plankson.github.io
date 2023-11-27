@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I am admitted to study for a M.Eng. degree at the College of Computer Science and Technolgy, Zhejiang University without entrance examination.
+I am admitted to study for a M.Eng. degree at the College of Computer Science and Technolgy, Zhejiang University **without entrance examination**.
