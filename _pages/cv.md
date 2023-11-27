@@ -10,4 +10,3 @@ toc:
   sidebar: left
 ---
 
-{% pdf "/assets/pdf/CV.pdf" %}
