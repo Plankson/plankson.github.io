@@ -6,12 +6,10 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: my.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Hangzhou, China</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
@@ -19,8 +17,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hello! I am Yunpeng Qing, a first-year M.Sc. student in the [Visual Intelligence and Pattern Analysis (VIPA) Lab](https://www.zju.edu.cn/english/) @ [ZheJiang University (ZJU)](https://www.zju.edu.cn/english/), advised by Professor [Mingli Song](https://person.zju.edu.cn/en/msong). In the past, I have received my B.E. degree from [the College of Computer Science and Technology, Zhejiang University](http://www.en.cs.zju.edu.cn/) in 2023.6.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Currently my reseach interests lies on **Reinforcement Learning**, especially on **Offline Reinforcement Learning**. My overarching goal is to create a robust and reliable general framework for agent to effectively recognize and sequential sequantial decision-making informations data. To this end, my prior work has been dedicated to devising methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.  
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Please always feel free to contact me via [**yunpeng.qing.cs@gmail.com**](yunpeng.qing.cs@gmail.com) if you have any questions, are interested in collaborating, or just want to chat.
