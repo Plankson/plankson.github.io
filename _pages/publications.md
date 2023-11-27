@@ -1,8 +1,8 @@
 ---
 layout: page
-permalink: /publications/
-title: publications
-description: $\dagger$ Equal contribution.
+permalink: /Publications/
+title: Publications
+description: $$\dagger$$ Equal contribution.
 nav: true
 nav_order: 1
 ---
