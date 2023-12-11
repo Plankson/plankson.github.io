@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: The College of Computer Science and Technology, Zhejiang University
+subtitle: College of Computer Science and Technology, Zhejiang University
 
 profile:
   align: right
@@ -19,7 +19,7 @@ social: true  # includes social icons at the bottom of the page
 
 Hello! I am Yunpeng Qing, a first-year M.Sc. student in the [Visual Intelligence and Pattern Analysis (VIPA) Lab](https://www.zju.edu.cn/english/) @ [ZheJiang University (ZJU)](https://www.zju.edu.cn/english/), advised by Professor [Mingli Song](https://person.zju.edu.cn/en/msong). In the past, I have received my B.E. degree from [the College of Computer Science and Technology, Zhejiang University](http://www.en.cs.zju.edu.cn/) in 2023.6.
 
-Currently my reseach interests lies on **Reinforcement Learning**, especially on **Offline Reinforcement Learning**. My researching goal is to create a robust and reliable general framework for agent to effectively utilize sequantial decision-making informations data for behavior improvement.  Towards this goal, my prior work has been dedicated to devising methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.  
+Currently my reseach interests lie in **Reinforcement Learning**, especially **Offline Reinforcement Learning**. My researching goal is to create a robust and reliable general framework for agent to effectively utilize sequantial decision-making informations data for behavior improvement.  Towards this goal, my prior work has been dedicated to devising methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.  
 
 Please always feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpeng.qing.cs@gmail.com) if you have any questions, are interested in collaborating, or just want to chat.
 
