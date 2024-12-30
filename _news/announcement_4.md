@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My graduation thesis is rated as the **Excellent Graduation Thesis**!
+My graduation thesis is rated as the **Excellent Graduation Thesis**.

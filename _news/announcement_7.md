@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper is accepted by **KDD 2025 ADS Track**!
+One paper is accepted by **KDD 2025 ADS Track**.
