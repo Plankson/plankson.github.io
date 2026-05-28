@@ -1,26 +1,71 @@
 ---
-layout: about
-title: About
 permalink: /
-subtitle: College of Computer Science and Technology, Zhejiang University
-
-profile:
-  align: right
-  image: my.jpeg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Hangzhou, China</p>
-
-news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+title: ""
+excerpt: ""
+author_profile: true
+redirect_from:
+  - /about/
+  - /about.html
 ---
 
-Hello! I am Yunpeng Qing, a third-year Ph.D. student currently advised by Professor [Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en). Previously, I work closely with [Shunyu Liu](https://liushunyu.github.io/) in [Visual Intelligence and Pattern Analysis (VIPA) Lab](https://www.zju.edu.cn/english/). I have received my B.E. degree from [the College of Computer Science and Technology, Zhejiang University](http://www.en.cs.zju.edu.cn/) in 2023.6. Currently I am working as intern student in ACE ROBOTICS.
+<span class='anchor' id='about-me'></span>
 
-My reseach interests lie in **Reinforcement Learning**, especially **Reinforcement Learning-enhanced Embodied AI**. My researching goal is to create a robust and reliable general framework for agent to effectively utilize sequantial decision-making informations data for behavior improvement.  Towards this goal, my prior work has been dedicated to devising methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.  
+Hello! I am Yunpeng Qing, a third-year Ph.D. student at the College of Computer Science and Technology, Zhejiang University, advised by Professor [Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en). Previously, I worked closely with [Shunyu Liu](https://liushunyu.github.io/) in the Visual Intelligence and Pattern Analysis (VIPA) Lab. I received my B.E. degree from [the College of Computer Science and Technology, Zhejiang University](http://www.en.cs.zju.edu.cn/) in June 2023. I am currently an intern student at ACE ROBOTICS.
 
-Please always feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpeng.qing.cs@gmail.com) if you have any questions, are interested in collaborating, or just want to chat.
+My research interests lie in **Reinforcement Learning**, especially **Reinforcement Learning-enhanced Embodied AI**. My research goal is to create robust and reliable general frameworks for agents to effectively use sequential decision-making information for behavior improvement. Towards this goal, my prior work has focused on methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.
 
- <i class="ai ai-google-scholar"></i> [**[Google Scholar]**](https://scholar.google.com/citations?user=-RvDl44AAAAJ&hl=zh-CN) &nbsp;&nbsp; <i class="fa fa-envelope"></i> [**[Email]**](mailto:yunpeng.qing.cs@gmail.com) &nbsp;&nbsp; <i class="fa fa-github"></i> [**[GitHub]**](https://github.com/Plankson) &nbsp;&nbsp; 
+Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpeng.qing.cs@gmail.com) if you have any questions, are interested in collaborating, or just want to chat.
+
+[[Google Scholar]](https://scholar.google.com/citations?user=-RvDl44AAAAJ&hl=en) &nbsp;&nbsp; [[Email]](mailto:yunpeng.qing.cs@gmail.com) &nbsp;&nbsp; [[GitHub]](https://github.com/Plankson) &nbsp;&nbsp; [[CV]](/files/CV.pdf)
+
+# 🔥 News
+- *2026.05*: Two papers are accepted by **ICML 2026**.
+- *2025.01*: One paper is accepted by **IEEE TITS**.
+- *2024.12*: One paper is accepted by **AAMAS 2025**.
+- *2024.11*: One paper is accepted by **KDD 2025 ADS Track**.
+- *2024.09*: One paper is accepted by **NeurIPS 2024**.
+- *2024.05*: One paper is accepted by **KDD 2024**.
+- *2023.06*: My graduation thesis was rated as an **Excellent Graduation Thesis**.
+- *2022.09*: I was admitted to pursue a M.Sc. degree at the College of Computer Science and Technology, Zhejiang University, **without entrance examination**.
+
+# 📝 Publications
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/500x300.png' alt="BiTrajDiff preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**BiTrajDiff: Bidirectional Trajectory Generation with Diffusion Models for Offline Reinforcement Learning**
+
+**Yunpeng Qing**, Yixiao Chi, Shuo Chen, Shunyu Liu, Kexuan Zhou, Sixu Lin, Litao Liu, Changqing Zou
+
+**ICML 2026**
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/a2po.png' alt="A2PO preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**A2PO: Towards Effective Offline Reinforcement Learning from an Advantage-aware Perspective**](https://arxiv.org/abs/2403.07262)
+
+**Yunpeng Qing**, Shunyu Liu, Jingyuan Cong, Kaixuan Chen, Yihe Zhou, Mingli Song
+
+**NeurIPS 2024** &nbsp; [[Code]](https://github.com/Plankson/A2PO_gym)
+</div>
+</div>
+
+- [**Powerformer: A Section-adaptive Transformer for Power Flow Adjustment**](https://arxiv.org/pdf/2401.02771.pdf), Kaixuan Chen, Wei Luo, Shunyu Liu, Yaoquan Wei, Yihe Zhou, **Yunpeng Qing**, Quan Zhang, Jie Song, Mingli Song, **KDD ADS Track 2025**.
+- [**Curricular Subgoals for Inverse Reinforcement Learning**](https://arxiv.org/pdf/2306.08232.pdf), Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan Cong, Tianhao Chen, Yunfu Liu, Mingli Song, **IEEE Transactions on Intelligent Transportation Systems 2025**. [[Code]](https://github.com/Plankson/CSIRL)
+- [**Temporal Prototype-Aware Learning for Active Voltage Control on Power Distribution Networks**](https://arxiv.org/pdf/2401.02771.pdf), Feiyang Xu, Shunyu Liu, **Yunpeng Qing**, Yihe Zhou, Yuwen Wang, Mingli Song, **KDD 2024**.
+- [**Is Centralized Training with Decentralized Execution Framework Centralized Enough for MARL?**](https://arxiv.org/pdf/2305.17352.pdf), Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song, **AAMAS 2024**.
+- [**A survey on explainable reinforcement learning: Concepts, algorithms, challenges**](https://arxiv.org/pdf/2211.06665.pdf), **Yunpeng Qing**, Shunyu Liu, Jie Song, Huiqiong Wang, Mingli Song, **arXiv 2023 / under review in CSUR**. [[Code]](https://github.com/Plankson/awesome-explainable-reinforcement-learning)
+
+# 🎖 Honors and Awards
+- *2023.06*: Excellent Graduation Thesis.
+- *2021.09*: Third-class Scholarship.
+- *2020.09*: Third-class Scholarship.
+
+# 📖 Education
+- *2023.09 - Present*: Ph.D. student, College of Computer Science and Technology, Zhejiang University.
+- *2019.09 - 2023.06*: B.E., College of Computer Science and Technology, Zhejiang University.
+
+# 💻 Internship
+- *Present*: Intern student, ACE ROBOTICS.

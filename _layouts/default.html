@@ -1,63 +1,33 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang }}">
+---
+layout: compress
+---
 
-  <!-- Head -->
+<!doctype html>
+<html lang="en" class="no-js">
   <head>
-  {%- if page.redirect -%}
-    <meta http-equiv="refresh" content="3; url={{ site.baseurl }}/" />
-  {%- endif -%}
-  {% include head.html %}
+    {% include head.html %}
+    {% include head/custom.html %}
   </head>
 
-  <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body>
 
-    <!-- Header -->
-    {%- include header.html %}
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
 
-    <!-- Content -->
-    <div class="container mt-5">
-      {% if page.toc and page.toc.sidebar %}
-        {% if page.toc.sidebar == "right" %}
-        <div class="row">
-          <!-- main content area -->
-          <div class="col-sm-9">
+    <div id="main" role="main">
+      {% include sidebar.html %}
+    
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+        <div class="page__inner-wrap">
+          <section class="page__content" itemprop="text">
             {{ content }}
-          </div>
-          <!-- sidebar, which will move to the top on a small screen -->
-          <div class="col-sm-3">
-            <nav id="toc-sidebar" class="sticky-top"></nav>
-          </div>
+          </section>
         </div>
-        {% else %}
-        <div class="row">
-          <!-- sidebar, which will move to the top on a small screen -->
-          <div class="col-sm-3">
-            <nav id="toc-sidebar" class="sticky-top"></nav>
-          </div>
-          <!-- main content area -->
-          <div class="col-sm-9">
-            {{ content }}
-          </div>
-        </div>
-        {% endif %}
-      {% else %}
-        {{ content }}
-      {% endif %}
+      </article>
     </div>
 
-    <!-- Footer -->
-    {%- include footer.html %}
+    {% include scripts.html %}
 
-    <!-- JavaScripts -->
-    {% include scripts/jquery.html %}
-    {% include scripts/bootstrap.html %}
-    {% include scripts/masonry.html %}
-    {% include scripts/misc.html %}
-    {% include scripts/badges.html %}
-    {% include scripts/mathjax.html %}
-    {% include scripts/analytics.html %}
-    {% include scripts/progressBar.html %}
-    {% include scripts/wechatModal.html %}
   </body>
 </html>
