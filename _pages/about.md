@@ -62,7 +62,7 @@ Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan C
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD ADS 2025</div><img src='images/powerformer.png' alt="Powerformer preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2025</div><img src='images/powerformer.png' alt="Powerformer preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Powerformer: A Section-adaptive Transformer for Power Flow Adjustment**
