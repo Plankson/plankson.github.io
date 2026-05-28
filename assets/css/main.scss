@@ -58,8 +58,8 @@
 
         > div {
             position: relative;
-            width: min(100%, 320px);
-            height: 190px;
+            width: min(100%, 640px);
+            aspect-ratio: 4 / 3;
             display: flex;
             align-items: center;
             justify-content: center;
