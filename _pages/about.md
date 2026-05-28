@@ -26,7 +26,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 - *2024.09*: One paper is accepted by **NeurIPS 2024**.
 - *2024.05*: One paper is accepted by **KDD 2024**.
 
-# 📝 Selected Publications
+# 📝 Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/bitrajdiff.png' alt="BiTrajDiff preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -42,7 +42,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/a2po.png' alt="A2PO preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**A2PO: Towards Effective Offline Reinforcement Learning from an Advantage-aware Perspective**](https://arxiv.org/abs/2403.07262)
+**A2PO: Towards Effective Offline Reinforcement Learning from an Advantage-aware Perspective**
 
 **Yunpeng Qing**, Shunyu Liu, Jingyuan Cong, Kaixuan Chen, Yihe Zhou, Mingli Song
 
@@ -50,11 +50,60 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 </div>
 </div>
 
-- [**Powerformer: A Section-adaptive Transformer for Power Flow Adjustment**](https://arxiv.org/pdf/2401.02771.pdf), Kaixuan Chen, Wei Luo, Shunyu Liu, Yaoquan Wei, Yihe Zhou, **Yunpeng Qing**, Quan Zhang, Jie Song, Mingli Song, **KDD ADS Track 2025**.
-- [**Curricular Subgoals for Inverse Reinforcement Learning**](https://arxiv.org/pdf/2306.08232.pdf), Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan Cong, Tianhao Chen, Yunfu Liu, Mingli Song, **IEEE Transactions on Intelligent Transportation Systems 2025**. [[Code]](https://github.com/Plankson/CSIRL)
-- [**Temporal Prototype-Aware Learning for Active Voltage Control on Power Distribution Networks**](https://arxiv.org/pdf/2401.02771.pdf), Feiyang Xu, Shunyu Liu, **Yunpeng Qing**, Yihe Zhou, Yuwen Wang, Mingli Song, **KDD 2024**.
-- [**Is Centralized Training with Decentralized Execution Framework Centralized Enough for MARL?**](https://arxiv.org/pdf/2305.17352.pdf), Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song, **AAMAS 2024**.
-- [**A survey on explainable reinforcement learning: Concepts, algorithms, challenges**](https://arxiv.org/pdf/2211.06665.pdf), **Yunpeng Qing**, Shunyu Liu, Jie Song, Huiqiong Wang, Mingli Song, **arXiv 2023 / under review in CSUR**. [[Project]](https://github.com/Plankson/awesome-explainable-reinforcement-learning)
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD ADS 2025</div><img src='images/powerformer.png' alt="Powerformer preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Powerformer: A Section-adaptive Transformer for Power Flow Adjustment**](https://arxiv.org/pdf/2401.02771.pdf)
+
+Kaixuan Chen, Wei Luo, Shunyu Liu, Yaoquan Wei, Yihe Zhou, **Yunpeng Qing**, Quan Zhang, Jie Song, Mingli Song
+
+**KDD ADS Track 2025** &nbsp; [[Paper]](https://arxiv.org/pdf/2401.02771.pdf)
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TITS 2025</div><img src='images/csirl.png' alt="CSIRL preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Curricular Subgoals for Inverse Reinforcement Learning**](https://arxiv.org/pdf/2306.08232.pdf)
+
+Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan Cong, Tianhao Chen, Yunfu Liu, Mingli Song
+
+**IEEE Transactions on Intelligent Transportation Systems 2025** &nbsp; [[Paper]](https://arxiv.org/pdf/2306.08232.pdf) [[Code]](https://github.com/Plankson/CSIRL)
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024</div><div style="height: 130px; display: flex; align-items: center; justify-content: center; background: #f5f5f5; color: #555; font-weight: 600;">Active Voltage Control</div></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Temporal Prototype-Aware Learning for Active Voltage Control on Power Distribution Networks**](https://arxiv.org/pdf/2401.02771.pdf)
+
+Feiyang Xu, Shunyu Liu, **Yunpeng Qing**, Yihe Zhou, Yuwen Wang, Mingli Song
+
+**KDD 2024** &nbsp; [[Paper]](https://arxiv.org/pdf/2401.02771.pdf)
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAMAS 2024</div><div style="height: 130px; display: flex; align-items: center; justify-content: center; background: #f5f5f5; color: #555; font-weight: 600;">MARL</div></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Is Centralized Training with Decentralized Execution Framework Centralized Enough for MARL?**](https://arxiv.org/pdf/2305.17352.pdf)
+
+Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song
+
+**AAMAS 2024** &nbsp; [[Paper]](https://arxiv.org/pdf/2305.17352.pdf)
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2023</div><div style="height: 130px; display: flex; align-items: center; justify-content: center; background: #f5f5f5; color: #555; font-weight: 600;">Explainable RL</div></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**A survey on explainable reinforcement learning: Concepts, algorithms, challenges**](https://arxiv.org/pdf/2211.06665.pdf)
+
+**Yunpeng Qing**, Shunyu Liu, Jie Song, Huiqiong Wang, Mingli Song
+
+**arXiv 2023 / under review in CSUR** &nbsp; [[Paper]](https://arxiv.org/pdf/2211.06665.pdf) [[Project]](https://github.com/Plankson/awesome-explainable-reinforcement-learning)
+</div>
+</div>
 
 # 🎖 Honors and Awards
 - *2023.06*: Excellent Graduation Thesis.
