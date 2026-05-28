@@ -62,6 +62,28 @@ Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan C
 </div>
 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/dygro-vla.png' alt="CADP preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**DyGRO-VLA: Cross-Task Scaling of Vision-Language-Action Models via Dynamic Grouped Residual Optimization**
+
+Sixu Lin, **Yunpeng Qing**, Litao Liu, Ming Zhou, Ruixing Jin, Xiaoyi Fan, Guiliang Liu
+
+[[Paper]](https://arxiv.org/pdf/2605.17486)  [[Code]](https://edem-ai.github.io/DyGRO-VLA/)
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAMAS 2024</div><img src='images/cadp.png' alt="CADP preview" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Is Centralized Training with Decentralized Execution Framework Centralized Enough for MARL?**
+
+Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song
+
+[[Paper]](https://arxiv.org/pdf/2305.17352.pdf)  [[Code]](https://github.com/zyh1999/CADP)
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2025</div><img src='images/powerformer.png' alt="Powerformer preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -85,16 +107,6 @@ Feiyang Xu, Shunyu Liu, **Yunpeng Qing**, Yihe Zhou, Yuwen Wang, Mingli Song
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAMAS 2024</div><img src='images/cadp.png' alt="CADP preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Is Centralized Training with Decentralized Execution Framework Centralized Enough for MARL?**
-
-Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song
-
-[[Paper]](https://arxiv.org/pdf/2305.17352.pdf)  [[Code]](https://github.com/zyh1999/CADP)
-</div>
-</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2023</div><img src='images/XRL.png' alt="Explainable RL survey preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
