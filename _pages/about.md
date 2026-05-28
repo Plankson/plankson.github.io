@@ -10,7 +10,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hello! I am Yunpeng Qing, a third-year Ph.D. student at the College of Computer Science and Technology, Zhejiang University, advised by Professor [Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en). Previously, I worked closely with [Shunyu Liu](https://liushunyu.github.io/) in the Visual Intelligence and Pattern Analysis (VIPA) Lab. I received my B.E. degree from [the College of Computer Science and Technology, Zhejiang University](http://www.en.cs.zju.edu.cn/) in June 2023. I am currently an intern student at ACE ROBOTICS.
+Hello! I am Yunpeng Qing, a third-year Ph.D. student in the College of Computer Science & the State Key Laboratory of CAD&CG at [Zhejiang University](http://www.zju.edu.cn/english/), advised by Professor [Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en). Previously, I worked closely with [Shunyu Liu](https://liushunyu.github.io/) in the Visual Intelligence and Pattern Analysis (VIPA) Lab. I received my B.E. degree from the College of Computer Science and Technology, Zhejiang University in June 2023. I am currently an intern student at ACE ROBOTICS.
 
 My research interests lie in **Reinforcement Learning**, especially **Reinforcement Learning-enhanced Embodied AI**. My research goal is to create robust and reliable general frameworks for agents to effectively use sequential decision-making information for behavior improvement. Towards this goal, my prior work has focused on methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.
 
@@ -25,19 +25,17 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 - *2024.11*: One paper is accepted by **KDD 2025 ADS Track**.
 - *2024.09*: One paper is accepted by **NeurIPS 2024**.
 - *2024.05*: One paper is accepted by **KDD 2024**.
-- *2023.06*: My graduation thesis was rated as an **Excellent Graduation Thesis**.
-- *2022.09*: I was admitted to pursue a M.Sc. degree at the College of Computer Science and Technology, Zhejiang University, **without entrance examination**.
 
-# 📝 Publications
+# 📝 Selected Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/500x300.png' alt="BiTrajDiff preview" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/bitrajdiff.png' alt="BiTrajDiff preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **BiTrajDiff: Bidirectional Trajectory Generation with Diffusion Models for Offline Reinforcement Learning**
 
 **Yunpeng Qing**, Yixiao Chi, Shuo Chen, Shunyu Liu, Kexuan Zhou, Sixu Lin, Litao Liu, Changqing Zou
 
-**ICML 2026**
+**ICML 2026** &nbsp; [[Paper]](https://arxiv.org/pdf/2506.05762) [[Code]](https://github.com/Plankson/BiTrajDiff)
 </div>
 </div>
 
@@ -48,7 +46,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 
 **Yunpeng Qing**, Shunyu Liu, Jingyuan Cong, Kaixuan Chen, Yihe Zhou, Mingli Song
 
-**NeurIPS 2024** &nbsp; [[Code]](https://github.com/Plankson/A2PO_gym)
+**NeurIPS 2024** &nbsp; [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/file/333a7697dbb67f09249337f81c27d749-Paper-Conference.pdf)  [[Code]](https://github.com/Plankson/A2PO_gym)
 </div>
 </div>
 
