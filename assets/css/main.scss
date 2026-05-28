@@ -113,8 +113,9 @@ h1:before, .anchor:before {
     padding-left: 1rem;
     padding-right: 1rem;
     position: absolute;
-    margin-top: .5em;
-    margin-left: -.5em;
+    top: .5em;
+    left: -.5em;
+    z-index: 1;
     color: white;
     background-color: #00369f;
     font-size: .8em;
