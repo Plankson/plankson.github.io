@@ -26,7 +26,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 - *2024.09*: One paper is accepted by **NeurIPS 2024**.
 - *2024.05*: One paper is accepted by **KDD 2024**.
 
-# 📝 Publications
+# 📝 Selected Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/bitrajdiff.png' alt="BiTrajDiff preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -81,29 +81,6 @@ Sixu Lin, **Yunpeng Qing**, Litao Liu, Ming Zhou, Ruixing Jin, Xiaoyi Fan, Guili
 Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song
 
 [[Paper]](https://arxiv.org/pdf/2305.17352.pdf)  [[Code]](https://github.com/zyh1999/CADP)
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2025</div><img src='images/powerformer.png' alt="Powerformer preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Powerformer: A Section-adaptive Transformer for Power Flow Adjustment**
-
-Kaixuan Chen, Wei Luo, Shunyu Liu, Yaoquan Wei, Yihe Zhou, **Yunpeng Qing**, Quan Zhang, Jie Song, Mingli Song
-
-[[Paper]](https://arxiv.org/pdf/2401.02771.pdf) [[Code]](https://github.com/Cra2yDavid/Powerformer)
-</div>
-</div>
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">KDD 2024</div><img src='images/tpa.png' alt="Powerformer preview" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Temporal Prototype-Aware Learning for Active Voltage Control on Power Distribution Networks**
-
-Feiyang Xu, Shunyu Liu, **Yunpeng Qing**, Yihe Zhou, Yuwen Wang, Mingli Song
-
-[[Paper]](https://arxiv.org/pdf/2406.17818) [[Code]](https://github.com/Canyizl/TPA-for-AVC)
 </div>
 </div>
 

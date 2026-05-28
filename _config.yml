@@ -22,7 +22,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Yunpeng Qing"
-  avatar           : "images/my.jpeg"
+  avatar           : "images/my_new.jpg"
+  # avatar           : "images/my.jpeg"
   bio              : "College of Computer Science and Technology, Zhejiang University"
   location         : "Hangzhou, China"
   employer         :
