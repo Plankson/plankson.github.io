@@ -69,7 +69,7 @@ Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan C
 
 Sixu Lin, **Yunpeng Qing**, Litao Liu, Ming Zhou, Ruixing Jin, Xiaoyi Fan, Guiliang Liu
 
-[[Paper]](https://arxiv.org/pdf/2605.17486)  [[Code]](https://edem-ai.github.io/DyGRO-VLA/)
+[[Paper]](https://arxiv.org/pdf/2605.17486)  [[Project]](https://edem-ai.github.io/DyGRO-VLA/)
 </div>
 </div>
 
