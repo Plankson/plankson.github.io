@@ -54,7 +54,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 - [**Curricular Subgoals for Inverse Reinforcement Learning**](https://arxiv.org/pdf/2306.08232.pdf), Shunyu Liu*, **Yunpeng Qing***, Shuqi Xu, Hongyan Wu, Jiangtao Zhang, Jingyuan Cong, Tianhao Chen, Yunfu Liu, Mingli Song, **IEEE Transactions on Intelligent Transportation Systems 2025**. [[Code]](https://github.com/Plankson/CSIRL)
 - [**Temporal Prototype-Aware Learning for Active Voltage Control on Power Distribution Networks**](https://arxiv.org/pdf/2401.02771.pdf), Feiyang Xu, Shunyu Liu, **Yunpeng Qing**, Yihe Zhou, Yuwen Wang, Mingli Song, **KDD 2024**.
 - [**Is Centralized Training with Decentralized Execution Framework Centralized Enough for MARL?**](https://arxiv.org/pdf/2305.17352.pdf), Yihe Zhou, Shunyu Liu, **Yunpeng Qing**, Kaixuan Chen, Tongya Zheng, Yanhao Huang, Jie Song, Mingli Song, **AAMAS 2024**.
-- [**A survey on explainable reinforcement learning: Concepts, algorithms, challenges**](https://arxiv.org/pdf/2211.06665.pdf), **Yunpeng Qing**, Shunyu Liu, Jie Song, Huiqiong Wang, Mingli Song, **arXiv 2023 / under review in CSUR**. [[Code]](https://github.com/Plankson/awesome-explainable-reinforcement-learning)
+- [**A survey on explainable reinforcement learning: Concepts, algorithms, challenges**](https://arxiv.org/pdf/2211.06665.pdf), **Yunpeng Qing**, Shunyu Liu, Jie Song, Huiqiong Wang, Mingli Song, **arXiv 2023 / under review in CSUR**. [[Project]](https://github.com/Plankson/awesome-explainable-reinforcement-learning)
 
 # 🎖 Honors and Awards
 - *2023.06*: Excellent Graduation Thesis.
