@@ -19,6 +19,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 [[Google Scholar]](https://scholar.google.com/citations?user=-RvDl44AAAAJ&hl=en) &nbsp;&nbsp; [[Email]](mailto:yunpeng.qing.cs@gmail.com) &nbsp;&nbsp; [[GitHub]](https://github.com/Plankson) &nbsp;&nbsp; [[CV]](/files/CV.pdf)
 
 # 🔥 News
+- *2026.10*: We release [[ACE-CaP-0]](https://acerobotics2025.github.io/ACE-CaP/), a agentic recipe for real-world CaP writing.
 - *2026.05*: Two papers are accepted by **ICML 2026**.
 - *2025.01*: One paper is accepted by **IEEE TITS**.
 - *2024.12*: One paper is accepted by **AAMAS 2025**.
