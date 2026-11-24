@@ -10,7 +10,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hello! I am Yunpeng Qing, a third-year Ph.D. student in the College of Computer Science & the State Key Laboratory of CAD&CG at [Zhejiang University](http://www.zju.edu.cn/english/), advised by Professor [Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en). Previously, I worked closely with [Shunyu Liu](https://liushunyu.github.io/) in the Visual Intelligence and Pattern Analysis (VIPA) Lab. I received my B.E. degree from the College of Computer Science and Technology, Zhejiang University in June 2023. I am currently an intern student at ACE ROBOTICS.
+Hello! I am Yunpeng Qing, a fourth-year Ph.D. student in the College of Computer Science & the State Key Laboratory of CAD&CG at [Zhejiang University](http://www.zju.edu.cn/english/), advised by Professor [Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en). Previously, I worked closely with [Shunyu Liu](https://liushunyu.github.io/) in the Visual Intelligence and Pattern Analysis (VIPA) Lab. I received my B.E. degree from the College of Computer Science and Technology, Zhejiang University in June 2023. I am currently an intern student at ACE ROBOTICS.
 
 My research interests lie in **Reinforcement Learning**, especially **Reinforcement Learning-enhanced Embodied AI**. My research goal is to create robust and reliable general frameworks for agents to effectively use sequential decision-making information for behavior improvement. Towards this goal, my prior work has focused on methods that facilitate the application of reinforcement learning algorithms on a variety of static datasets.
 
@@ -19,7 +19,7 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 [[Google Scholar]](https://scholar.google.com/citations?user=-RvDl44AAAAJ&hl=en) &nbsp;&nbsp; [[Email]](mailto:yunpeng.qing.cs@gmail.com) &nbsp;&nbsp; [[GitHub]](https://github.com/Plankson) &nbsp;&nbsp; [[CV]](/files/CV.pdf)
 
 # 🔥 News
-- *2026.10*: We release [[ACE-CaP-0]](https://acerobotics2025.github.io/ACE-CaP/), an effective agentic recipe for real-world CaP writing.
+- *2026.11*: We release [ACE-CaP-0](https://acerobotics2025.github.io/ACE-CaP/), an effective agentic recipe for real-world CaP writing.
 - *2026.05*: Two papers are accepted by **ICML 2026**.
 - *2025.01*: One paper is accepted by **IEEE TITS**.
 - *2024.12*: One paper is accepted by **AAMAS 2025**.
@@ -28,6 +28,17 @@ Please feel free to contact me via [**yunpeng.qing.cs@gmail.com**](mailto:yunpen
 - *2024.05*: One paper is accepted by **KDD 2024**.
 
 # 📝 Selected Publications
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='images/ace-cap-0.png' alt="ACE-CaP-0 Figure 1" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**ACE-CaP-0: Real-World Code-as-Policies in the Era of Experience**
+
+ACE-CaP Team &nbsp; <span style="color: #d62728; font-size: 0.85em; font-style: italic; font-weight: 600;">Core contributor</span>
+
+[[Paper]](https://arxiv.org/pdf/2611.16872v1) [[Project]](https://acerobotics2025.github.io/ACE-CaP/)
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2026</div><img src='images/bitrajdiff.png' alt="BiTrajDiff preview" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
